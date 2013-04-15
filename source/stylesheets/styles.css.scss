@@ -1,0 +1,783 @@
+/*
+  TITLE:    Styles for kiskolabs.com
+  AUTHOR:   @viljamis + @kiskolabs
+  VERSION:  1.0
+*/
+
+// Compass
+@charset "utf-8";
+@import "compass/css3";
+@import "reset.css.scss";
+
+// Kisko brand fonts
+@font-face {
+  font-family: "kisko_icon";
+  src: url("../fonts/kisko_icon.eot");
+  src: url("../fonts/kisko_icon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/kisko_icon.woff") format("woff"),
+       url("../fonts/kisko_icon.ttf") format("truetype"),
+       url("../fonts/kisko_icon.svg#kisko_icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Kisko brand icons
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "kisko_icon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  line-height: 1em;
+}
+.icon-th-list:before { content: "=" }
+.icon-cancel-circle:before { content: "X" }
+.icon-rss-alt:before { content: "*" }
+.icon-right-open:before { content: ">" }
+
+// Kisko brand colors
+$color-red: #cf3f13;
+$color-black: #1d1b1b;
+$color-black-alt: #181716;
+$color-white: #f9f7f6;
+$color-grey: #9f9e9d;
+$color-aside: #e8e8e7;
+
+// Kisko brand fonts
+$font-proxima: "proxima-nova", arial, sans-serif;
+$font-etica: "lft-etica", arial, sans-serif;
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* KEYFRAMES
+--------------------------------------------- */
+@-webkit-keyframes fadeIn {
+  0%    { opacity: 0 }
+  100%  { opacity: 1 }
+  }
+@-moz-keyframes fadeIn {
+  0%    { opacity: 0 }
+  100%  { opacity: 1 }
+  }
+@-o-keyframes fadeIn {
+  0%    { opacity: 0 }
+  100%  { opacity: 1 }
+  }
+@keyframes fadeIn {
+  0%    { opacity: 0 }
+  100%  { opacity: 1 }
+  }
+
+/* RWD
+--------------------------------------------- */
+@-ms-viewport { width: device-width }
+@viewport { width: device-width }
+
+html {
+  min-width: 223px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.preload * { @include transition(none !important) }
+
+/* BASE
+--------------------------------------------- */
+html, body { height: 100% }
+
+html {
+  -webkit-tap-highlight-color: rgba($color-black, 0.2);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  @include hyphens(auto);
+}
+
+body {
+  font: normal 100%/1.5 $font-proxima;
+  color: $color-black;
+  background: $color-white;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  *zoom: 1;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* LINKS
+--------------------------------------------- */
+a {
+  text-decoration: none;
+  color: $color-red;
+  @include hyphens(none);
+}
+
+/* HEADER
+--------------------------------------------- */
+.header {
+  z-index: 3;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.company {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  font-size: 16px;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.logo {
+  margin: 2em 0 0.5em;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  &:active { opacity: 0.9 }
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+  img {
+    margin: 0;
+    width: 100px;
+  }
+}
+
+.frontpage {
+  background: $color-black-alt;
+  color: $color-white;
+  a { color: $color-white }
+}
+
+.top_container {
+  width: 100%;
+  overflow: hidden;
+  background: $color-red;
+}
+
+.banner_footer {
+  z-index: 2;
+  position: relative;
+  padding: 1.5em 0 0;
+  font: 200 112.5%/1.5 $font-etica;
+  background: $color-black-alt;
+  color: $color-grey;
+  -webkit-font-smoothing: antialiased;
+  a {
+    position: relative;
+    display: block;
+    margin-top: 0.6em;
+    &:active { color: mix($color-white, $color-black, 70%) }
+  }
+  p { margin: 0 0 1em }
+  strong {
+    font-weight: 200;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+.subpage .banner_footer {
+  color: $color-white;
+  padding: 1.5em 0 0.6em;
+  p { font-size: percentage(18/16) }
+}
+
+.banner_footer .social {
+  @include opacity(0);
+  width: 0;
+  height: 0;
+  @include image-replacement;
+}
+
+.banner {
+  position: relative;
+  z-index: 1;
+  img {
+    width: 86%;
+    position: absolute;
+    bottom: -25%;
+    right: -5%;
+    z-index: 1;
+  }
+  h1 {
+    //-webkit-animation: fadeIn 500ms ease-in 800ms both;
+    //-moz-animation: fadeIn 500ms ease-in 800ms both;
+    //-o-animation: fadeIn 500ms ease-in 800ms both;
+    //animation: fadeIn 500ms ease-in 800ms both;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+    margin: 1.5em 0 1em -0.02em;
+    .stage1 { display: block }
+  }
+}
+
+.subpage .banner h1 {
+  text-align: center;
+  position: relative;
+  margin: -0.2em 0 0.8em;
+}
+
+/* CONTENT
+--------------------------------------------- */
+h1, h2, h3, h4 {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font: 700 2.5em/1.15 $font-etica; // Bold
+  letter-spacing: -0.04em;
+  @include hyphens(none);
+}
+
+h1 { color: $color-white }
+p, ul { margin-bottom: 1.4em }
+
+strong, b {
+  font-style: normal;
+  font-weight: 600;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+em, i {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.main {
+  -webkit-font-smoothing: antialiased;
+  margin: 1.5em 0 2em;
+  p a { text-decoration: underline }
+}
+
+.aside {
+  -webkit-font-smoothing: antialiased;
+  @include border-radius(4px);
+  @include box-sizing;
+  width: 100%;
+  background: $color-aside;
+  margin: 0 0 1.5em;
+  padding: 1.3em 1.5em;
+  p { margin-bottom: 0 }
+}
+
+/* FOOTER
+--------------------------------------------- */
+.footer {
+  -webkit-font-smoothing: antialiased;
+  padding: 1.5em 0;
+  color: $color-white;
+  background: $color-black;
+  width: 100%;
+}
+
+/* NAVIGATION NO-JS
+--------------------------------------------- */
+#menu { display: none }
+
+#nav {
+  overflow: hidden;
+  text-align: left;
+  width: 111.35%;
+  margin: 0 0 0 -5.7%;
+  z-index: 5;
+  position: relative;
+  font-weight: 600;
+  -webkit-font-smoothing: subpixel-antialiased;
+  a {
+    position: relative;
+    display: block;
+    padding: 0.7em 5%;
+    color: $color-white;
+    background: rgba($color-black, .1);
+    border-bottom: 1px solid rgba($color-black, .2);
+    @include transition(background-color .4s ease);
+    &:hover {
+      background: rgba($color-black, .35);
+      .icon-right-open { color: darken($color-red, 30%) }
+    }
+    &:active {
+      background: rgba($color-black, .55);
+      @include transition(none);
+    }
+    &:focus {
+      outline: none;
+      background: rgba($color-black, .55);
+    }
+    &:after {
+      position: absolute;
+      top: 0.6em;
+      right: 5%;
+      font-weight: bold;
+      font-size: 1.125em;
+      font-family: Arial, sans-serif;
+    }
+    .icon-right-open {
+      @include transition(color .4s ease);
+      color: darken($color-red, 12%);
+      position: absolute;
+      right: 3%;
+    }
+  }
+  .active a {
+    background: $color-black;
+    &:focus { background: rgba($color-black, .55) }
+    .icon-right-open {
+      color: $color-white;
+    }
+  }
+}
+
+/* NAVIGATION JS
+--------------------------------------------- */
+.js #nav {
+  height: 0;
+  @include transition(height .5s ease);
+}
+
+.support #nav { @include transition(none !important) }
+.js #nav.opened { height: 20em }
+.js #menu { display: block }
+
+.js #menu {
+  -webkit-tap-highlight-color: rgba(0,0,0, 0);
+  position: relative;
+  height: 44px;
+  z-index: 6;
+  width: 101.6%;
+  margin: 0 0 0 -5.7%;
+  padding: 0 5%;
+  @include image-replacement;
+  @include background-size(44px 22px !important);
+  background: rgba($color-black, .3) url("../images/menu/small.png") no-repeat right 10px;
+}
+
+/* MIN-WIDTH 26em
+--------------------------------------------- */
+@media screen and (min-width: 26em) {
+  .logo img {
+    width: 120px;
+    height: 120px;
+  }
+  .banner {
+    img { width: 80% }
+    h1 { font-size: 3.2em }
+  }
+}
+
+/* MIN-WIDTH 34em
+--------------------------------------------- */
+@media screen and (min-width: 34em) {
+  .logo {
+    margin-top: 3em;
+    img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+  .banner {
+    img { width: 77% }
+    h1 {
+      margin: 3em 0 1em -0.05em;
+      font-size: 3.5em;
+      .stage1 { display: inline; }
+    }
+  }
+  .main, .aside { line-height: 1.5 }
+  .subpage .banner_footer {
+    color: $color-white;
+    padding: 1.5em 0 0.6em;
+    @include hyphens(none);
+    
+    p {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* MIN-WIDTH 40em
+--------------------------------------------- */
+@media screen and (min-width: 40em) {
+  .frontpage {
+    min-height: 700px;
+    position: relative;
+  }
+  .frontpage .top_container {
+    height: 75%;
+    min-height: 500px;
+    position: absolute;
+    .container {
+      height: 100%;
+      position: relative;
+      min-height: 524px;
+    }
+  }
+  
+  .subpage .top_container {
+    height: 500px;
+    position: relative;
+    
+    .banner_footer {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+    
+    h1 {
+      position: relative;
+      left: auto;
+      bottom: auto;
+    }
+  }
+  
+  .container {
+    position: relative;
+    width: 85%;
+  }
+  .logo {
+    margin: 0;
+    float: left;
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  .banner {
+    height: 100%;
+    position: static;
+    img {
+      width: 68%;
+      bottom: 6%;
+      right: -4%;
+    }
+    h1 {
+      position: absolute;
+      left: 0;
+      bottom: 10%;
+      font-size: 3.8em;
+      .stage2 { display: block; }
+    }
+  }
+  .top_header {
+    margin: 4% 0;
+    width: 100%;
+    float: left;
+  }
+  .header #menu { display: none }
+  .header #nav {
+    margin: 1.6em -0.5em 0 0;
+    height: auto;
+    float: right;
+    width: auto;
+    li { float: left }
+    a {
+      font-size: 87.5%;
+      float: left;
+      padding: 0.6em;
+      border: 0;
+      &.first { @include border-left-radius(4px) }
+      &.last { @include border-right-radius(4px) }
+      .icon-right-open { display: none }
+    }
+  }
+  .frontpage .banner_footer {
+    left: 0;
+    right: 0;
+    height: 20%;
+    position: absolute;
+    padding: 2.5em 0 1em;
+    bottom: 0;
+    p {
+      width: 73%;
+      float: left;
+      margin: 0;
+    }
+    a { display: inline }
+    .social {
+      margin-top: 1.7em;
+      @include opacity(1);
+      float: right;
+      @include background-size(100px 50px);
+      @include image-replacement;
+      @include transition(opacity .4s ease);
+      background-image: url("../images/social/small.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      width: 50px;
+      height: 50px;
+      &.twitter {
+        background-position: right top;
+        margin-right: 5px;
+      }
+      &:hover { opacity: 0.7 }
+    }
+  }
+
+  // Subpage styles
+  .subpage .banner h1 {
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 240px;
+  }
+
+}
+
+/* MIN-WIDTH 48em
+--------------------------------------------- */
+@media screen and (min-width: 48em) {
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+  .header #nav {
+    margin-top: 1.7em;
+    a {
+      font-size: 100%;
+      padding: 0.6em 0.8em;
+    }
+  }
+  .frontpage .banner_footer {
+    padding-top: 3em;
+    height: 17%;
+    .social { margin-top: 1em }
+    p a { white-space: nowrap }
+  }
+  .banner {
+    img { width: 60% }
+    h1 {
+      font-size: 4em;
+      bottom: 5%;
+    }
+  }
+
+  // Subpage styles
+  .subpage .banner_footer p {
+    width: 60%;
+  }
+  .main {
+    margin-top: 3em;
+    width: 60%;
+    float: left;
+  }
+  .aside {
+    margin-top: 3em;
+    float: right;
+    width: 35%;
+  }
+}
+
+/* MIN-WIDTH 48em / MAX-WIDTH 60em
+--------------------------------------------- */
+@media screen and (min-width: 48em) and (max-width: 60em) and (max-height: 70em) {
+  .banner img { width: 50% }
+}
+
+/* MIN-WIDTH 40em / MAX-WIDTH 59em
+--------------------------------------------- */
+@media screen and (min-width: 40em) and (max-width: 59em) and (min-height: 58em) {
+  .banner img {
+    width: 78%;
+    bottom: 3%;
+  }
+}
+
+/* MIN-WIDTH 60em
+--------------------------------------------- */
+@media screen and (min-width: 60em) {
+  .frontpage { min-height: 800px }
+  .container { width: 80% }
+  .frontpage .top_container {
+    min-height: 600px;
+    .container { min-height: 624px }
+  }
+  .header #nav {
+    margin-top: 1.7em;
+    a {
+      font-size: 100%;
+      float: left;
+      padding: 0.6em 1em;
+      border: 0;
+    }
+  }
+  .banner_footer p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .frontpage .banner_footer {
+    padding: 2.7em 0 1em;
+    p { width: 75% }
+    .social { margin-top: 1.5em }
+    .facebook { margin-right: 0.5em }
+  }
+  .banner {
+    h1 {
+      font-size: 4.6em;
+      bottom: 7%;
+    }
+    img {
+      bottom: 8%;
+      width: 57%;
+    }
+  }
+}
+
+/* MIN-WIDTH 68em
+--------------------------------------------- */
+@media screen and (min-width: 68em) {
+  .container { width: 75% }
+  .frontpage { min-height: 51.25em }
+  .frontpage .top_container {
+    min-height: 40em;
+    .container { min-height: 40.25em }
+  }
+  .frontpage .banner_footer {
+    padding: 3em 0 0.5em;
+    p {
+      width: 33em;
+      a { margin-left: 0.2em }
+    }
+  }
+  .banner img {
+    bottom: 6%;
+    width: 54%;
+  }
+}
+
+/* MIN-WIDTH 82em
+--------------------------------------------- */
+@media screen and (min-width: 82em) {
+  body { font-size: 112.5% }
+  .container { width: 70% }
+  .banner_footer {
+    p { font-size: 22px }
+    .facebook { margin-right: 1.5em }
+  }
+  .logo img {
+    width: 110px;
+    height: 110px;
+  }
+  .header #nav {
+    margin-top: 1.9em;
+    a { padding: 0.6em 1em }
+  }
+}
+
+/* MIN-WIDTH 68em / MAX-WIDTH 100em
+--------------------------------------------- */
+@media screen and (min-width: 68em) and (max-width: 100em) and (max-height: 54em) {
+  .frontpage { min-height: 49.25em }
+  .top_header { margin: 3% 0 }
+  .frontpage .banner_footer { padding-bottom: 1.5em }
+  .frontpage .top_container {
+    min-height: 29em;
+    .container {
+      min-height: 35.25em;
+    }
+  }
+  .banner {
+    h1 {
+      font-size: 4.5em;
+      bottom: 6%;
+    }
+    img {
+      bottom: 8%;
+      right: -1.5%;
+      width: 49%;
+    }
+  }
+}
+
+/* MIN-WIDTH 100em
+--------------------------------------------- */
+@media screen and (min-width: 100em) {
+  body { font-size: 125% }
+  .banner_footer p { font-size: 1.125em }
+  .logo img {
+    width: 130px;
+    height: 130px;
+  }
+  .banner {
+    img { right: -2% }
+    h1 {
+      font-size: 5em;
+      bottom: 5%;
+    }
+  }
+}
+
+/* MIN-WIDTH 100em
+--------------------------------------------- */
+@media screen and (min-width: 100em) and (max-height: 76em) {
+  .banner img { width: 48% }
+}
+
+/* MIN-WIDTH 125em
+--------------------------------------------- */
+@media screen and (min-width: 120em) and (min-height: 76em) {
+  .banner h1 {
+    font-size: 5.5em;
+    bottom: 3%;
+  }
+  p.intro {
+    line-height: 1.75;
+  }
+}
+
+/* HIGH DPI SCREENS
+--------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), 
+screen and (min--moz-device-pixel-ratio: 1.3), 
+screen and (-o-min-device-pixel-ratio: 2/1), 
+screen and (min-device-pixel-ratio: 1.3), 
+screen and (min-resolution: 192dpi), 
+screen and (min-resolution: 2dppx) {
+  .banner_footer .social { background-image: url("../images/social/large.png") !important }
+  .js #menu { background-image: url("../images/menu/large.png") }
+}
+
+/* TINY SCREENS
+--------------------------------------------- */
+@media screen and (max-width: 18em) {
+  body {
+    font-size: percentage(14/16);
+    line-height: 1.4em;
+  }
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "kisko_icons",
+  "glyphs": [
+    {
+      "uid": "715e1003368da5e5c41ae35190af68a1",
+      "orig_css": "right-open",
+      "orig_code": 62,
+      "css": "right-open",
+      "code": 62,
+      "src": "websymbols"
+    },
+    {
+      "uid": "2cfb3f2b46b34a1790aec0aa846297b6",
+      "orig_css": "th-list",
+      "orig_code": 61,
+      "css": "th-list",
+      "code": 61,
+      "src": "entypo"
+    },
+    {
+      "uid": "wcb87qh0k9smu6zukdhbn5zip98zofkh",
+      "orig_css": "cancel-circle",
+      "orig_code": 88,
+      "css": "cancel-circle",
+      "code": 88,
+      "src": "modernpics"
+    },
+    {
+      "uid": "7645346d5ab8b17f69a9c765c180aca3",
+      "orig_css": "rss-alt",
+      "orig_code": 42,
+      "css": "rss-alt",
+      "code": 42,
+      "src": "websymbols"
+    }
+  ]
+}

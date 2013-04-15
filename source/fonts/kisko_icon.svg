@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20100429 at Thu Oct 18 08:48:55 2012
+ By root
+Copyright (C) 2012 by original authors @ fontello.com
+</metadata>
+<defs>
+<font id="kisko_icon" horiz-adv-x="364" >
+  <font-face 
+    font-family="kisko_icon"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    bbox="0 -100 900 800"
+    underline-thickness="50"
+    underline-position="-100"
+    unicode-range="U+002A-0058"
+  />
+<missing-glyph 
+d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
+    <glyph glyph-name=".notdef" 
+d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="asterisk" unicode="*" horiz-adv-x="900" 
+d="M292 112q0 33 -23.5 56.5t-56.5 23.5t-56.5 -23.5t-23.5 -56.5t23.5 -56.5t56.5 -23.5t56.5 23.5t23.5 56.5zM429 32h123q0 114 -56.5 210.5t-153 153t-210.5 56.5v-122q123 0 210 -87q87 -86 87 -211zM645 32h123q0 129 -50.5 247t-135.5 203t-203 135.5t-247 50.5v-122
+q139 0 257.5 -69t187 -187t68.5 -258zM900 721v-742q0 -32 -23.5 -55.5t-55.5 -23.5h-742q-32 0 -55.5 23.5t-23.5 55.5v742q0 32 23.5 55.5t55.5 23.5h742q32 0 55.5 -23.5t23.5 -55.5z" />
+    <glyph glyph-name="equal" unicode="=" horiz-adv-x="730" 
+d="M665 350q21 0 35.5 -14.5t14.5 -35.5t-14.5 -35.5t-35.5 -14.5h-600q-21 0 -35.5 14.5t-14.5 35.5t14.5 35.5t35.5 14.5h600zM65 450q-21 0 -35.5 14.5t-14.5 35.5t14.5 35.5t35.5 14.5h600q21 0 35.5 -14.5t14.5 -35.5t-14.5 -35.5t-35.5 -14.5h-600zM665 150
+q21 0 35.5 -14.5t14.5 -35.5t-14.5 -35.5t-35.5 -14.5h-600q-21 0 -35.5 14.5t-14.5 35.5t14.5 35.5t35.5 14.5h600z" />
+    <glyph glyph-name="greater" unicode="&#x3e;" horiz-adv-x="588" 
+d="M139 800l450 -450l-450 -450l-139 139l311 311l-311 311z" />
+    <glyph glyph-name="X" unicode="X" horiz-adv-x="961" 
+d="M481 722q169 0 287 -117t118 -286q0 -170 -117.5 -288.5t-287.5 -118.5q-169 0 -287.5 118.5t-118.5 288.5q0 167 118.5 285t287.5 118zM565 319l125 125l-85 84l-124 -126l-126 127l-84 -85l127 -125l-127 -125l84 -85l126 126l124 -125l85 84z" />
+  </font>
+</defs></svg>
